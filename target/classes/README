@@ -1,0 +1,6 @@
+installation:
+pre-requisites: application requires preinstalled mySql database
+1. run db_setup.sql to create db schema and necessary tables
+2. run init_data.sql to populate tables with some initial values
+3. update application.properties with actual jdbc url and username/password
+4. run mvn install to execute tests and build the project

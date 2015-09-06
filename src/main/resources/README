@@ -1,0 +1,32 @@
+installation:
+pre-requisites: application requires preinstalled mySql database
+1. run db_setup.sql to create db schema and necessary tables
+2. run init_data.sql to populate tables with some initial values
+3. update application.properties with actual jdbc url and username/password
+4. run mvn install to execute tests and build the project
+5. execute 'java -jar target/vb-test-0.0.1-SNAPSHOT.jar' to start app on default port
+
+API description:
+
+1. get invoices history for given customer:
+GET http://localhost:8081/some_name/v1.0/invoices/
+params: customerId          ID of the customer
+example: http://localhost:8081/some_name/v1.0/invoices/?customerId=1
+
+2. get invoices for given customer and address for specified month:
+GET http://localhost:8081/some_name/v1.0/invoices/
+params: customerId          ID of the customer
+        addressId
+        month               number in range 1..12
+example: http://localhost:8081/some_name/v1.0/invoices/?customerId=1&addressId=1&month=9
+
+3. create invoice:
+POST http://localhost:8081/some_name/v1.0/invoices/
+params: customerId          ID of the customer
+        addressId           ID of customer's address
+        invoiceTypeId       ID of the needed invoice type
+        dueDate             due date of the new invoice in format dd-MM-yyyy
+        amount              amount of the invoice
+        vatAmount           vat amount of the invoice
+        totalAmount         total amount of the invoice
+example: http://localhost:8081/some_name/v1.0/invoices/?customerId=1&addressId=1&invoiceTypeId=1&dueDate=1-1-2015&amount=10&vatAmount=10&totalAmount=10

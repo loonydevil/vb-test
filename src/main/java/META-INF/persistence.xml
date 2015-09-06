@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="vbtst">
+		<class>nef.model.Address</class>
+		<class>nef.model.Country</class>
+		<class>nef.model.Customer</class>
+		<class>nef.model.Invoice</class>
+		<class>nef.model.InvoiceType</class>
+	</persistence-unit>
+</persistence>
